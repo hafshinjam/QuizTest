@@ -1,15 +1,33 @@
 package com.example.myapplication.model;
 
 public class Question {
-    private int mTextResId;
+    private String mQuestionText;
     private boolean mAnswerTrue;
+    private boolean mCheat;
+    private String mColor;
 
-    public int getTextResId() {
-        return mTextResId;
+    public boolean isCheat() {
+        return mCheat;
     }
 
-    public void setTextResId(int textResId) {
-        mTextResId = textResId;
+    public void setCheat(boolean cheat) {
+        mCheat = cheat;
+    }
+
+    public String getColor() {
+        return mColor;
+    }
+
+    public void setColor(String color) {
+        mColor = color;
+    }
+
+    public String getQuestionText() {
+        return mQuestionText;
+    }
+
+    public void setQuestionText(String questionText) {
+        mQuestionText = questionText;
     }
 
     public boolean isAnswerTrue() {
@@ -20,15 +38,17 @@ public class Question {
         mAnswerTrue = answerTrue;
     }
 
-    public Question(int textResId, boolean answerTrue) {
-        mTextResId = textResId;
+    public Question(String questionText, boolean answerTrue,String color,boolean cheat) {
+        mQuestionText = questionText;
         mAnswerTrue = answerTrue;
+        mColor=color;
+        mCheat=cheat;
     }
 
     @Override
     public String toString() {
         return "Question{" +
-                "mTextResId=" + mTextResId +
+                "mQuestionText=" + mQuestionText +
                 ", mAnswerTrue=" + mAnswerTrue +
                 '}';
     }
